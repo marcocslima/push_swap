@@ -6,7 +6,7 @@
 /*   By: mcesar-d <mcesar-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 09:37:14 by mcesar-d          #+#    #+#             */
-/*   Updated: 2022/08/05 23:51:40 by mcesar-d         ###   ########.fr       */
+/*   Updated: 2022/08/06 17:08:53 by mcesar-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,6 @@ int	*vet_index(int *vet_entry, int *vet_sort, int size)
 		vet_index[i] = counter;
 		i++;
 	}
-	free(vet_sort);
 	return (vet_index);
 }
 

@@ -6,7 +6,7 @@
 /*   By: mcesar-d <mcesar-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 22:44:49 by mcesar-d          #+#    #+#             */
-/*   Updated: 2022/08/06 12:05:55 by mcesar-d         ###   ########.fr       */
+/*   Updated: 2022/08/06 16:55:46 by mcesar-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,8 @@ static void	sort(int *vet_entry, int *vet_sort, int size)
 		sort_five(stacks);
 	else
 		big_base_sort(stacks, size - 1, n);
+	free(vet_entry);
+	free(vet_sort);
 	free_stacks(stacks);
 }
 

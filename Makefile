@@ -6,7 +6,7 @@
 #    By: mcesar-d <mcesar-d@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/10 22:47:14 by mcesar-d          #+#    #+#              #
-#    Updated: 2022/08/06 00:38:03 by mcesar-d         ###   ########.fr        #
+#    Updated: 2022/08/06 16:38:09 by mcesar-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ CFLAGS				=	-Wall -Wextra -Werror
 all:				$(NAME)
 
 $(NAME):			$(LIBFT) $(OBJS) $(HEADER)
-					$(CC) -g3 $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
+					$(CC) -g $(CFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
 
 $(LIBFT):
 					$(MAKE) -C $(LIBFT_PATH)
