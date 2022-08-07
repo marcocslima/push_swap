@@ -6,7 +6,7 @@
 /*   By: mcesar-d <mcesar-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 22:44:49 by mcesar-d          #+#    #+#             */
-/*   Updated: 2022/08/06 17:49:35 by mcesar-d         ###   ########.fr       */
+/*   Updated: 2022/08/07 15:42:07 by mcesar-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 void	free_stacks(t_stack **stcs)
 {
 	t_stack	*aux;
-	
-	while (stcs[0]){
+
+	while (stcs[0])
+	{
 		aux = stcs[0];
 		stcs[0] = stcs[0]->next;
 		free(aux);
@@ -63,18 +64,21 @@ static void	sort(int *vet_entry, int *vet_sort, int size)
 	stack_a = NULL;
 	stacks[1] = NULL;
 	if (size - 1 == 3)
-		sort_three(stacks[0]);
-	else if (size - 1 == 5)
-		sort_five(stacks);
+		stacks[0] = sort_three(stacks[0]);
+	else
+		if (size - 1 == 5)
+			sort_five(stacks);
 	else
 		big_base_sort(stacks, size - 1, n);
 	free_stacks(stacks);
+	free(vet_sort);
 }
 
 int	main(int argc, char *argv[])
 {
 	int	*vet_entry;
 	int	*vet_sort;
+	int	*ret_vet;
 
 	if (argc < 2)
 		msg(ERR_NUMARG);
@@ -87,12 +91,10 @@ int	main(int argc, char *argv[])
 		free(vet_sort);
 		return (1);
 	}
-	if (!vet_entry || !vet_sort)
-	{
-		free(vet_sort);
-		msg(ERR_NOBASE);
-	}
 	check_duplicates(vet_sort, argc - 1);
-	sort(vet_entry, vet_index(vet_entry, vet_sort, argc - 1), argc);
+	ret_vet = vet_index(vet_entry, vet_sort, argc - 1);
+	sort(vet_entry, ret_vet, argc);
+	free(vet_entry);
+	free(vet_sort);
 	return (0);
 }

@@ -6,7 +6,7 @@
 #    By: mcesar-d <mcesar-d@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/10 22:47:14 by mcesar-d          #+#    #+#              #
-#    Updated: 2022/08/06 16:38:09 by mcesar-d         ###   ########.fr        #
+#    Updated: 2022/08/07 15:45:47 by mcesar-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,7 @@ $(LIBFT):
 
 clean:
 					$(MAKE) -C $(LIBFT_PATH) clean
-					$(RM) $(OBJS)
+					$(RM) $(OBJS) valgrind debug
 					$(RM) $(OBJS_BONUS)
 
 fclean:				clean
@@ -57,4 +57,9 @@ debug:
 					$(CC) -g $(CFLAGS) $(SOURCES_BONUS) $(LIBFT) -o $(NAME)
 					gdb --tui --args ./push_swap 5 3 9 100 2
 
-.PHONY:				all clean fclean re libft
+valgrind:
+					$(MAKE) -C $(LIBFT_PATH)
+					$(CC) -g $(CFLAGS) $(SOURCES) $(LIBFT) -o $@
+					valgrind --leak-check=full -s ./$@ 0 200 -3 9
+
+.PHONY:				all clean fclean re libft valgrind

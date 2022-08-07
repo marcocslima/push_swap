@@ -6,7 +6,7 @@
 /*   By: mcesar-d <mcesar-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/05 10:33:25 by mcesar-d          #+#    #+#             */
-/*   Updated: 2022/08/05 10:41:37 by mcesar-d         ###   ########.fr       */
+/*   Updated: 2022/08/07 15:28:34 by mcesar-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,6 @@ t_stack	*rra(t_stack *sck)
 
 t_stack	*sort_three(t_stack *sck)
 {
-	t_stack	*aux;
 	int		fe;
 	int		me;
 	int		le;
@@ -64,22 +63,22 @@ t_stack	*sort_three(t_stack *sck)
 	me = *sck->next->index;
 	le = *sck->next->next->index;
 	if ((fe > me) && (fe < le))
-		aux = sa(sck);
+		sck = sa(sck);
 	else if ((fe > me) && (me > le))
 	{
-		aux = sa(sck);
-		aux = rra(aux);
+		sck = sa(sck);
+		sck = rra(sck);
 	}
 	else if ((fe > me) && (fe > le) && (me < le))
-		aux = ra(sck);
+		sck = ra(sck);
 	else if ((fe < me) && (fe < le) && (me > le))
 	{
-		aux = sa(sck);
-		aux = ra(aux);
+		sck = sa(sck);
+		sck = ra(sck);
 	}
 	else
-		aux = rra(sck);
-	return (aux);
+		sck = rra(sck);
+	return (sck);
 }
 
 void	sort_five(t_stack **scks)
