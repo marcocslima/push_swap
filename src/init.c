@@ -6,7 +6,7 @@
 /*   By: mcesar-d <mcesar-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 09:37:14 by mcesar-d          #+#    #+#             */
-/*   Updated: 2022/08/08 02:06:32 by mcesar-d         ###   ########.fr       */
+/*   Updated: 2022/08/08 02:30:06 by mcesar-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,6 @@ int	*init_entry(char *argv[], int size)
 		{
 			free(vet);
 			msg(ERR_SIZEINT);
-			exit(EXIT_FAILURE);
 		}
 		vet[i] = (int)tmp;
 		i++;

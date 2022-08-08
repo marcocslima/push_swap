@@ -6,7 +6,7 @@
 /*   By: mcesar-d <mcesar-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 22:44:49 by mcesar-d          #+#    #+#             */
-/*   Updated: 2022/08/07 23:53:53 by mcesar-d         ###   ########.fr       */
+/*   Updated: 2022/08/08 02:35:32 by mcesar-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,6 @@ static void	sort(int *vet_entry, int *vet_sort, int size)
 		n++;
 	stack_a = init_stack(vet_entry, vet_sort, size - 1);
 	stacks[0] = stack_a;
-	stack_a = NULL;
-	stacks[1] = NULL;
 	if (size - 1 == 2)
 		stacks[0] = sort_two(stacks[0]);
 	else if (size - 1 == 3)
@@ -91,7 +89,7 @@ int	main(int argc, char *argv[])
 	{
 		free(vet_entry);
 		free(vet_sort);
-		return (1);
+		exit (EXIT_FAILURE);
 	}
 	ret_vet = vet_index(vet_entry, vet_sort, argc - 1);
 	sort(vet_entry, ret_vet, argc);

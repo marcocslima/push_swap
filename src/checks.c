@@ -6,7 +6,7 @@
 /*   By: mcesar-d <mcesar-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 09:32:58 by mcesar-d          #+#    #+#             */
-/*   Updated: 2022/08/08 00:05:36 by mcesar-d         ###   ########.fr       */
+/*   Updated: 2022/08/08 02:28:21 by mcesar-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,7 @@ void	check_isnumeric(char *argv[], int size)
 		while (argv[i][j] != '\0')
 		{
 			if (!ft_isdigit(argv[i][j++]))
-			{
 				msg(ERR_NONUM);
-				exit(0);
-			}
 		}
 		i++;
 	}
@@ -48,7 +45,6 @@ void	check_duplicates(int *vet, int size)
 		{
 			free(vet);
 			msg(ERR_DUPLIC);
-			exit(EXIT_FAILURE);
 		}
 		i++;
 	}
