@@ -6,7 +6,7 @@
 /*   By: mcesar-d <mcesar-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 22:48:42 by mcesar-d          #+#    #+#             */
-/*   Updated: 2022/08/06 11:32:49 by mcesar-d         ###   ########.fr       */
+/*   Updated: 2022/08/08 00:00:07 by mcesar-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,11 @@
 # include <errno.h>
 # include "../libraries/libft/libft.h"
 
-# define ERR_NONUM	"no numeric entry\n"
-# define ERR_DUPLIC	"number duplicated\n"
-# define ERR_NUMARG	"number of arguments\n"
-# define ERR_NOBASE	"base not loaded\n"
+# define ERR_NONUM		"some arguments aren’t integers\n"
+# define ERR_DUPLIC		"there are duplicates\n"
+# define ERR_SIZEINT	"some arguments are bigger than an integer\n"
+# define ERR_NUMARG		"number of arguments\n"
+# define ERR_NOBASE		"base not loaded\n"
 
 int		msg(char *err);
 void	check_isnumeric(char *argv[], int size);
@@ -43,6 +44,10 @@ t_stack	*rotate_stack(t_stack	*sck);
 t_stack	**return_stack(t_stack **scks, t_stack *scks_font, t_stack *scks_dest);
 t_stack	**return_to_a(t_stack **stcs);
 t_stack	**moviment(t_stack **stcs, int i, int size);
+t_stack	*sa(t_stack *sck);
+t_stack	*ra(t_stack	*sck);
+t_stack	*rra(t_stack *sck);
+t_stack	*sort_two(t_stack *sck);
 t_stack	*sort_three(t_stack *sck);
 void	sort_five(t_stack **scks);
 void	free_stacks(t_stack **stcs);

@@ -6,14 +6,14 @@
 #    By: mcesar-d <mcesar-d@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/07/10 22:47:14 by mcesar-d          #+#    #+#              #
-#    Updated: 2022/08/07 15:45:47 by mcesar-d         ###   ########.fr        #
+#    Updated: 2022/08/08 02:03:10 by mcesar-d         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 LIBFT_PATH			=	./libraries/libft
 LIBFT				=	$(LIBFT_PATH)/libft.a
 
-SOURCES_FILES		=	push_swap.c error.c checks.c init.c sort_litle.c sort_big.c
+SOURCES_FILES		=	push_swap.c error.c checks.c init.c sort_litle.c sort_big.c moviments.c
 SOURCES_DIR			=	./src
 SOURCES				=	$(addprefix $(SOURCES_DIR)/, $(SOURCES_FILES))
 
@@ -60,6 +60,6 @@ debug:
 valgrind:
 					$(MAKE) -C $(LIBFT_PATH)
 					$(CC) -g $(CFLAGS) $(SOURCES) $(LIBFT) -o $@
-					valgrind --leak-check=full -s ./$@ 0 200 -3 9
+					valgrind --leak-check=full -s ./$@ 1 -4000000000 2
 
 .PHONY:				all clean fclean re libft valgrind

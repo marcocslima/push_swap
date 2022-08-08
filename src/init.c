@@ -6,7 +6,7 @@
 /*   By: mcesar-d <mcesar-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 09:37:14 by mcesar-d          #+#    #+#             */
-/*   Updated: 2022/08/07 13:02:37 by mcesar-d         ###   ########.fr       */
+/*   Updated: 2022/08/08 02:06:32 by mcesar-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,9 @@ int	*sort_entry(int *vet, int size)
 
 int	*init_entry(char *argv[], int size)
 {
-	int	i;
-	int	*vet;
+	int		i;
+	int		*vet;
+	long	tmp;
 
 	i = 0;
 	vet = malloc(sizeof(int) * size);
@@ -65,7 +66,14 @@ int	*init_entry(char *argv[], int size)
 		exit(EXIT_FAILURE);
 	while (i < size)
 	{
-		vet[i] = ft_atoi(argv[i + 1]);
+		tmp = ft_atoi(argv[i + 1]);
+		if (tmp > 2147483647 || tmp < -2147483648)
+		{
+			free(vet);
+			msg(ERR_SIZEINT);
+			exit(EXIT_FAILURE);
+		}
+		vet[i] = (int)tmp;
 		i++;
 	}
 	return (vet);

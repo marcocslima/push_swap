@@ -6,7 +6,7 @@
 /*   By: mcesar-d <mcesar-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 20:28:41 by mcesar-d          #+#    #+#             */
-/*   Updated: 2022/08/03 09:49:34 by mcesar-d         ###   ########.fr       */
+/*   Updated: 2022/08/08 01:57:59 by mcesar-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int		ft_strncmp(const char *s1, const char *s2, size_t size);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 size_t	ft_strlcat(char *dest, const char *src, size_t size);
 char	*ft_strnstr(const char *s1, const char *s2, size_t size);
-int		ft_atoi(const char *s);
+long	ft_atoi(const char *s);
 void	*ft_calloc(size_t nmemb, size_t size);
 void	ft_bzero(void *s, size_t size);
 char	*ft_substr(char const *s, unsigned int start, size_t size);

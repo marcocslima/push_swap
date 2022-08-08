@@ -6,7 +6,7 @@
 /*   By: mcesar-d <mcesar-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/02 10:24:44 by mcesar-d          #+#    #+#             */
-/*   Updated: 2022/05/09 11:02:48 by mcesar-d         ###   ########.fr       */
+/*   Updated: 2022/08/08 01:57:18 by mcesar-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ static int	ft_isspace(char c)
 		|| c == '\f' || c == '\r' || c == ' ');
 }
 
-int	ft_atoi(const char *s)
+long	ft_atoi(const char *s)
 {
-	int	index;
-	int	isneg;
-	int	result;
+	int		index;
+	int		isneg;
+	long	result;
 
 	index = 0;
 	isneg = 1;

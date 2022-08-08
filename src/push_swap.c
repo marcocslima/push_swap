@@ -6,7 +6,7 @@
 /*   By: mcesar-d <mcesar-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 22:44:49 by mcesar-d          #+#    #+#             */
-/*   Updated: 2022/08/07 15:42:07 by mcesar-d         ###   ########.fr       */
+/*   Updated: 2022/08/07 23:53:53 by mcesar-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,11 +63,12 @@ static void	sort(int *vet_entry, int *vet_sort, int size)
 	stacks[0] = stack_a;
 	stack_a = NULL;
 	stacks[1] = NULL;
-	if (size - 1 == 3)
+	if (size - 1 == 2)
+		stacks[0] = sort_two(stacks[0]);
+	else if (size - 1 == 3)
 		stacks[0] = sort_three(stacks[0]);
-	else
-		if (size - 1 == 5)
-			sort_five(stacks);
+	else if (size - 1 == 5)
+		sort_five(stacks);
 	else
 		big_base_sort(stacks, size - 1, n);
 	free_stacks(stacks);
@@ -81,17 +82,17 @@ int	main(int argc, char *argv[])
 	int	*ret_vet;
 
 	if (argc < 2)
-		msg(ERR_NUMARG);
+		exit(0);
 	check_isnumeric(argv, argc);
 	vet_entry = init_entry(argv, argc - 1);
 	vet_sort = sort_entry(vet_entry, argc - 1);
+	check_duplicates(vet_sort, argc - 1);
 	if (check_is_sorted(vet_entry, argc - 1))
 	{
 		free(vet_entry);
 		free(vet_sort);
 		return (1);
 	}
-	check_duplicates(vet_sort, argc - 1);
 	ret_vet = vet_index(vet_entry, vet_sort, argc - 1);
 	sort(vet_entry, ret_vet, argc);
 	free(vet_entry);
