@@ -6,7 +6,7 @@
 /*   By: mcesar-d <mcesar-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/03 09:37:14 by mcesar-d          #+#    #+#             */
-/*   Updated: 2022/08/08 02:30:06 by mcesar-d         ###   ########.fr       */
+/*   Updated: 2022/08/08 10:49:25 by mcesar-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,10 +67,15 @@ int	*init_entry(char *argv[], int size)
 	while (i < size)
 	{
 		tmp = ft_atoi(argv[i + 1]);
-		if (tmp > 2147483647 || tmp < -2147483648)
+		if (tmp > 2147483647)
 		{
 			free(vet);
-			msg(ERR_SIZEINT);
+			msg(ERR_INTMAX);
+		}
+		if (tmp < -2147483648)
+		{
+			free(vet);
+			msg(ERR_INTMIN);
 		}
 		vet[i] = (int)tmp;
 		i++;

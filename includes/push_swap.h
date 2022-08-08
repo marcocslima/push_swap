@@ -6,7 +6,7 @@
 /*   By: mcesar-d <mcesar-d@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/10 22:48:42 by mcesar-d          #+#    #+#             */
-/*   Updated: 2022/08/08 00:00:07 by mcesar-d         ###   ########.fr       */
+/*   Updated: 2022/08/08 10:46:58 by mcesar-d         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@
 
 # define ERR_NONUM		"some arguments aren’t integers\n"
 # define ERR_DUPLIC		"there are duplicates\n"
-# define ERR_SIZEINT	"some arguments are bigger than an integer\n"
+# define ERR_INTMAX		"some arguments are bigger than an integer\n"
+# define ERR_INTMIN		"some arguments are smaller than an integer\n"
 # define ERR_NUMARG		"number of arguments\n"
 # define ERR_NOBASE		"base not loaded\n"
 
